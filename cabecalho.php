@@ -23,7 +23,7 @@
 				</ul>
 			</nav>
 			<?php if(isset($_SESSION["login"])){ ?>
-				<p> Seu saldo é: 1000000 </p>
+				<p> Seu saldo é: R$ <?php echo busca_saldo($_SESSION["login"]); ?> </p>
 			<?php } ?>
 		</header>
 		<content>
