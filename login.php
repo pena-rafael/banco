@@ -1,5 +1,9 @@
 <?php
 	$t = "Login";
+	include("sessao.php");
+	if(isset($_POST["login"])) {
+		autentica();
+	}
 	include("cabecalho.php");
 	
 	if(!isset($_SESSION["login"])){

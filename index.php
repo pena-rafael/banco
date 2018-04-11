@@ -1,5 +1,6 @@
 <?php
 	$t = "Início";
+	include("sessao.php");
 	include("cabecalho.php");
 ?>
 	<div class="inicio">

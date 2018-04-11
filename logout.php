@@ -1,6 +1,9 @@
 <?php
 	$t = "Sair";
+	include("sessao.php");
+	logout();
 	include("cabecalho.php");
+	
 ?>
 	<h2 class="sair"> Volte sempre! </h2>
 <?php

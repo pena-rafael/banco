@@ -1,5 +1,6 @@
 <?php
 	$t = "Depósito";
+	include("sessao.php");
 	include("cabecalho.php");
 	if(isset($_SESSION["login"])){
 ?>
