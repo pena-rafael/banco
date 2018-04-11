@@ -43,12 +43,26 @@ function atribuir_saldo($login, $dinheiro) {
 				//print_r($dinheiro);
 				if(($saldo_float + $dinheiro)<=0) {
 					header("location: ?erro=1");
+				} else {
+					$v->saldo = $saldo_float + $dinheiro;
+					$xml->asXML($arquivo);
 				}
-				$v->saldo = $saldo_float + $dinheiro;
-				$xml->asXML($arquivo);
 				break;
 			}
 		}
 	}
+}
+function busca_usuario($login) {
+	$arquivo = "arquivos/usuarios.xml";
+	if(file_exists($arquivo)) {
+		$xml = simplexml_load_file($arquivo);
+		foreach($xml->usuario as $i=>$v) {
+			if($v->login == $login) {
+				return(true);
+			}
+		}
+	}
+	header("location: ?erro=1");
+	return(false);
 }
 ?>
